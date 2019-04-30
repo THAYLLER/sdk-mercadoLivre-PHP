@@ -3,6 +3,7 @@
 class mercadoLivreActions {
 
     /**
+     * @var $API_ROOT_URL é uma URL principal para acessar as APIs do MercadoLivre.
      * Configuração para CURL
      */
     public static $CURL_OPTS = array(
@@ -13,7 +14,7 @@ class mercadoLivreActions {
         CURLOPT_RETURNTRANSFER => 1, 
         CURLOPT_TIMEOUT => 60
     );
-    
+    protected static $API_ROOT_URL = "https://api.mercadolibre.com";
     /**
      * Execute uma requisição GET 
      * 
@@ -128,6 +129,31 @@ class mercadoLivreActions {
         
         return $return;
     }
+    /**
+     * Verifique e construa um URL real para fazer o pedido
+     * 
+     * @param string $path
+     * @param array $params
+     * @return string
+     */
+    public function make_path($path, $params = array()) {
+        if (!preg_match("/^\//", $path)) {
+            $path = '/' . $path;
+        }
 
+        $uri = self::$API_ROOT_URL . $path;
+        
+        if(!empty($params)) {
+            $paramsJoined = array();
+
+            foreach($params as $param => $value) {
+               $paramsJoined[] = "$param=$value";
+            }
+            $params = '?'.implode('&', $paramsJoined);
+            $uri = $uri.$params;
+        }
+
+        return $uri;
+    }
     
 }
