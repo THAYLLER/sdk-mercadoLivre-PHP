@@ -2,6 +2,10 @@
   Esse projeto foi baseado no sdk em php do mercadolivre que atualmente esá com erro, e pensando nisso
   reestruurei e melhorei o sdk php
 
+## Como criar meu app para começar
+  siga esse passo a passo para criar seu primeiro app e iniciar a implementação
+  https://developers.mercadolivre.com.br/pt_br/registre-o-seu-aplicativo
+  
 ## Como faço para instalá-lo?
 
        clone repositorio
