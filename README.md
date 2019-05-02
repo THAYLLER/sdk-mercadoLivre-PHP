@@ -31,6 +31,7 @@ Iniciando o desenvolvimento!
 
 ```php
 $sdk = new mercadoLivreAuth();
-
-### Acesse a pasta exemplos e para ver como é feito cada consulta
 ```
+### Exemplos
+
+Acesse a pasta exemplos para conferir como consumir esse sdk
