@@ -17,6 +17,7 @@ class mercadoLivreProducts extends mercadoLivreActions{
     public function getConsultUser() {
     
         $params = array("access_token"=>$this->token);
-        return $this->get(self::$API_ROOT_URL."/users/me?",$params);        
+
+        return $this->get("/users/me",$params);        
     }
 }

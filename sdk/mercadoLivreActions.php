@@ -24,9 +24,8 @@ class mercadoLivreActions {
      * @return mixed
      */
     public function get($path, $params = null, $assoc = false) {
-        $exec = $this->execute($path, null, $params, $assoc);
-
-        return $exec;
+        
+        return $this->execute($path, null, $params, $assoc);
     }
 
     /**
@@ -115,7 +114,7 @@ class mercadoLivreActions {
      */
     public function execute($path, $opts = array(), $params = array(), $assoc = false) {
         $uri = $this->make_path($path, $params);
-
+        if(!empty($params['access_token'])) echo $uri."\n\n";
         $ch = curl_init($uri);
         curl_setopt_array($ch, self::$CURL_OPTS);
 
