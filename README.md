@@ -25,10 +25,12 @@ require_once 'sdk/mercadoLivreActions.php';
 require_once 'sdk/mercadoLivreAuth.php';
 require_once 'sdk/mercadoLivreProducts.php';
 ```
-Inicianndo o desenvolvimento!
+Iniciando o desenvolvimento!
 
 ### Criando instancia da classe principal
 
 ```php
 $sdk = new mercadoLivreAuth();
+
+### Acesse a pasta exemplos e para ver como é feito cada consulta
 ```
