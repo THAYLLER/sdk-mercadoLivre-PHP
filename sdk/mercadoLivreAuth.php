@@ -1,33 +1,6 @@
 <?php
 class mercadoLivreAuth extends mercadoLivreActions{
 
-	/**
-	 * @version 0.0.1
-	 */
-    const VERSION  = "0.0.1";
-
-    /**
-     
-     * @var $AUTH_URL é uma URL para redirecionar o usuário para login.
-     */
-    
-    protected static $OAUTH_URL    = "/oauth/token";
-    public static $AUTH_URL = array(
-        "MLA" => "https://auth.mercadolibre.com.ar", // Argentina 
-        "MLB" => "https://auth.mercadolivre.com.br", // Brasil
-        "MCO" => "https://auth.mercadolibre.com.co", // Colombia
-        "MCR" => "https://auth.mercadolibre.com.cr", // Costa Rica
-        "MEC" => "https://auth.mercadolibre.com.ec", // Ecuador
-        "MLC" => "https://auth.mercadolibre.cl", // Chile
-        "MLM" => "https://auth.mercadolibre.com.mx", // Mexico
-        "MLU" => "https://auth.mercadolibre.com.uy", // Uruguay
-        "MLV" => "https://auth.mercadolibre.com.ve", // Venezuela
-        "MPA" => "https://auth.mercadolibre.com.pa", // Panama
-        "MPE" => "https://auth.mercadolibre.com.pe", // Peru
-        "MPT" => "https://auth.mercadolibre.com.pt", // Prtugal
-        "MRD" => "https://auth.mercadolibre.com.do"  // Dominicana
-    );
-
     private $client_id;
     private $client_secret;
     private $redirect_uri;

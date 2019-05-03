@@ -1,6 +1,6 @@
 <?php
 
-class mercadoLivreProducts extends mercadoLivreActions{
+class mercadoLivreProductsUser extends mercadoLivreActions{
 
     private $token; 
     
@@ -51,5 +51,20 @@ class mercadoLivreProducts extends mercadoLivreActions{
         $params = array("access_token"=>$this->token);
 
         return $this->get("/users/".$id."",$params);        
+    }
+
+    /**
+     * Devolve um array com os dados relacionados ao nickname do usuário informado
+     * 
+     * @param string $nickname
+     * @param string $siteId
+     * @return array
+    */
+
+    public function getIdUser($nickname) { //esta retornando erro 400
+
+        $params = array("nickname"=>$nickname);
+        
+        return $this->get("/sites/".self::$SITE_ID['BR']."/search",$params);        
     }
 }
