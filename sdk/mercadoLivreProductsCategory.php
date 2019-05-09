@@ -26,4 +26,9 @@ class mercadoLivreProductsCategory extends mercadoLivreActions{
         return $this->get("/sites/".self::$SITE_ID['BR']."/search",$params);     
     }
 
+    public function listTypeId($id) {
+
+        return $this->get("/categories/".$id."/listing_types");
+    }
+
 }

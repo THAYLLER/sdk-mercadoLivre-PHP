@@ -49,7 +49,7 @@ class mercadoLivreProducts extends mercadoLivreActions{
     }
 
     public function publishProduct() {
-
+        exit(print_r($this->publishProductParams()));
         return $this->post("/items",$this->publishProductParams());
     }
 }
