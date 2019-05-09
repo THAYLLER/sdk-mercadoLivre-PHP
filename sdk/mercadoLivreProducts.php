@@ -2,7 +2,21 @@
 
 class mercadoLivreProducts extends mercadoLivreActions{
 
-    private $token; 
+    private $title;
+    private $category_id;
+    private $price;
+    private $official_store_id;
+    private $currency_id;
+    private $available_quantity;
+    private $buying_mode;
+    private $listing_type_id;
+    private $condition;
+    private $description;
+    private $video_id;
+    private $warranty;
+    private $pictures;
+    private $tags;
+    private $token;
     
     public function __set($atrib, $value) {
         
@@ -14,42 +28,28 @@ class mercadoLivreProducts extends mercadoLivreActions{
         return $this->$atrib;
     }
 
-    /**
-     * Devolve um array com os dados relacionados ao seu usuário
-     * 
-     * @return array
-    */
+    public function publishProductParams() {
 
-    public function getConsultUser() {
-    
-        $params = array("access_token"=>$this->token);
-
-        return $this->get("/users/me",$params);        
+        return array(
+            "access_token"=>$this->token,
+            "title" => $this->title,
+            "category_id" => $this->category_id,
+            "price" => $this->price,
+            "currency_id" => $this->currency_id,
+            "available_quantity" => $this->available_quantity,
+            "buying_mode" => $this->buying_mode,
+            "listing_type_id" => $this->listing_type_id,
+            "condition" => $this->condition,
+            "description" => $this->description,
+            "video_id" => $this->video_id,
+            "tags" => $this->tags,
+            "warranty" => $this->warranty,
+            "pictures" => $this->pictures
+        );
     }
 
-    /**
-     * Devolve um array com os dados publico relacionados ao id do usuário informado
-     * 
-     * @param string $id
-     * @return array
-    */
+    public function publishProduct() {
 
-    public function getCheckUserIdPublic($id) {
-
-        return $this->get("/users/".$id."");        
-    }
-
-    /**
-     * Devolve um array com os dados privado relacionados ao id do usuário informado
-     * 
-     * @param string $id
-     * @return array
-    */
-
-    public function getCheckUserIdPrivate($id) {
-
-        $params = array("access_token"=>$this->token);
-
-        return $this->get("/users/".$id."",$params);        
+        return $this->post("/items",$this->publishProductParams());
     }
 }
