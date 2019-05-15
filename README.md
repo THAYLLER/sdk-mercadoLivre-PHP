@@ -6,7 +6,7 @@
   siga esse passo a passo para criar seu primeiro app e iniciar a implementação:
   https://developers.mercadolivre.com.br/pt_br/registre-o-seu-aplicativo
    
-## Como faço para instalá-lo?
+## Como faço para instalá-lo? 
 
        clone repositório
        https://github.com/THAYLLER/sdk-mercadoLivre-PHP.git
