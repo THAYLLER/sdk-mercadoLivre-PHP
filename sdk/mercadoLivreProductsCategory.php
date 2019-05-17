@@ -30,5 +30,8 @@ class mercadoLivreProductsCategory extends mercadoLivreActions{
 
         return $this->get("/categories/".$id."/listing_types");
     }
-
+    public function listAttributesCategory($id) {
+        
+        return $this->get("/categories/".$id."/attributes");
+    }
 }

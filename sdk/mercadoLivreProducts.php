@@ -14,6 +14,8 @@ class mercadoLivreProducts extends mercadoLivreActions{
     private $attributes;
     private $sale_terms;
     private $pictures;
+    private $condition;
+    private $seller_custom_field;
     private $token;
     
     public function __set($atrib, $value) {
@@ -29,15 +31,16 @@ class mercadoLivreProducts extends mercadoLivreActions{
     public function publishProductParams() {
 
         return array(
-            "access_token"=>$this->token,
-            "title" => $this->title,
+            "title" => utf8_decode($this->title),
             "category_id" => $this->category_id,
             "price" => $this->price,
             "currency_id" => $this->currency_id,
             "available_quantity" => $this->available_quantity,
             "buying_mode" => $this->buying_mode,
             "listing_type_id" => $this->listing_type_id,
-            "description" => $this->description,
+            "condition" => $this->condition,
+            "seller_custom_field" => $this->seller_custom_field,
+            "description" => utf8_decode($this->description),
             "video_id" => $this->video_id,
             "attributes" => $this->attributes,
             "sale_terms" => $this->sale_terms,
@@ -46,7 +49,7 @@ class mercadoLivreProducts extends mercadoLivreActions{
     }
 
     public function publishProduct() {
-        exit(print_r($this->publishProductParams()));
-        return $this->post("/items",$this->publishProductParams());
+        echo(print_r($this->publishProductParams())."\n");
+        return $this->post("/items",$this->publishProductParams(),array("access_token"=>$this->token));
     }
 }
