@@ -35,3 +35,4 @@ $sdk = new mercadoLivreAuth();
 ### Exemplos
 
 Acesse a pasta exemplos para conferir como consumir esse sdk.
+
