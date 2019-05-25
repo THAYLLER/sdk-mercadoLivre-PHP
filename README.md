@@ -10,7 +10,7 @@
 
        clone repositório
        https://github.com/THAYLLER/sdk-mercadoLivre-PHP.git
-
+ 
 ## Como eu uso isso?
 
 Para usar o sdk suba a pasta para o seu projeto, dentro da pasta sdk/config,  configure seus dados para que o sdk funcione,
