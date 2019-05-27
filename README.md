@@ -9,7 +9,7 @@
 ## Como faço para instalá-lo? 
 
        clone repositório
-       https://github.com/THAYLLER/sdk-mercadoLivre-PHP.git
+       https://github.com/THAYLLER/sdk-mercadoLivre-PHP.git 
  
 ## Como eu uso isso?
 
